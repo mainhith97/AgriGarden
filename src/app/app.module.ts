@@ -18,6 +18,10 @@ import { DistributorHeaderComponent } from './components/header/distributor-head
 import { FarmerDashboardComponent } from './components/dashboard/farmer-dashboard/farmer-dashboard.component';
 import { FarmerSidebarComponent } from './components/sidebar/farmer-sidebar/farmer-sidebar.component';
 import { DistributorLayoutComponent } from './pages/distributor-layout/distributor-layout.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { FarmerRegisterComponent } from './pages/farmer-register/farmer-register.component';
+import { FarmerSignupComponent } from './components/farmer-signup/farmer-signup.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +40,11 @@ import { DistributorLayoutComponent } from './pages/distributor-layout/distribut
     DistributorHeaderComponent,
     FarmerDashboardComponent,
     FarmerSidebarComponent,
-    DistributorLayoutComponent
+    DistributorLayoutComponent,
+    RegisterComponent,
+    SignupComponent,
+    FarmerRegisterComponent,
+    FarmerSignupComponent
   ],
   imports: [
     BrowserModule,
