@@ -8,20 +8,32 @@ import { FarmerLayoutComponent } from './pages/farmer-layout/farmer-layout.compo
 import { DistributorLayoutComponent } from './pages/distributor-layout/distributor-layout.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { FarmerRegisterComponent } from './pages/farmer-register/farmer-register.component';
+import { AdminService } from './services/admin.service';
 
 const routes: Routes = [
-  { path: '',  component: HomeComponent },
+  { path: 'home',  component: HomeComponent },
+  {
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
   { path: 'login',  component: LoginComponent },
   { path: 'register',  component: RegisterComponent },
   { path: 'farmer_register',  component: FarmerRegisterComponent },
   { path: 'myaccount', component: FarmerLayoutComponent },
   { path: 'user', component: DistributorLayoutComponent },
+
   { path: 'admin', component: AdminLoginComponent },
-  { path: 'admin/main',  component: AdminlayoutComponent }
+  { path: 'admin/main', component: AdminlayoutComponent }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(
+      routes,
+      { enableTracing: true } // <-- debugging purposes only
+    ),
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

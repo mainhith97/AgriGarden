@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { DataService } from 'src/app/services/data.service';
+import { Router } from '@angular/router';
+import { ILogin } from 'src/app/shared/interface';
 
 @Component({
   selector: 'app-signin',
@@ -7,9 +11,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SigninComponent implements OnInit {
 
-  constructor() { }
+  loginForm: FormGroup;
+  res: any;
+  constructor(
+    private formBuilder: FormBuilder,
+    private loginService: DataService,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.buildForm();
+  }
+  buildForm() {
+    this.loginForm = this.formBuilder.group({
+      username: [''],
+      password: ['']
+    });
+  }
+  submit({ value }: { value: ILogin }) {
+    return this.loginService.postLogin2(value).subscribe(res => {
+      this.res = res;
+      if (this.res.success && this.res.role === 'distributor') {
+        console.log(res);
+        console.log(value);
+        // localStorage.setItem('userToken', this.res.result.token);
+        this.router.navigate(['user']);
+
+      } else if (this.res.success && this.res.role === 'farmer') {
+        console.log(res);
+        console.log(value);
+        // localStorage.setItem('userToken', this.res.result.token);
+        this.router.navigate(['myaccount']);
+      } else {
+        console.log(res);
+      }
+    });
   }
 
 }

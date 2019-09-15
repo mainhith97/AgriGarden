@@ -1,5 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,6 +25,11 @@ import { RegisterComponent } from './pages/register/register.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { FarmerRegisterComponent } from './pages/farmer-register/farmer-register.component';
 import { FarmerSignupComponent } from './components/farmer-signup/farmer-signup.component';
+import { OwlModule } from 'ngx-owl-carousel';
+import { Body1Component } from './components/body1/body1.component';
+import { DataService } from './services/data.service';
+import { AuthService } from './services/auth.service';
+import { AdminService } from './services/admin.service';
 
 @NgModule({
   declarations: [
@@ -44,13 +52,19 @@ import { FarmerSignupComponent } from './components/farmer-signup/farmer-signup.
     RegisterComponent,
     SignupComponent,
     FarmerRegisterComponent,
-    FarmerSignupComponent
+    FarmerSignupComponent,
+    Body1Component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    OwlModule
   ],
-  providers: [],
+  providers: [DataService, AuthService, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

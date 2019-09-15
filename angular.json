@@ -30,11 +30,14 @@
             "styles": [
               "src/styles.scss",
               "./node_modules/bootstrap/scss/bootstrap.scss",
-              "./node_modules/font-awesome/scss/font-awesome.scss"
+              "./node_modules/font-awesome/scss/font-awesome.scss",
+              "./node_modules/owl.carousel/dist/assets/owl.carousel.css"
+
             ],
             "scripts": [
               "./node_modules/jquery/dist/jquery.min.js",
               "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+
             ]
           },
           "configurations": {
