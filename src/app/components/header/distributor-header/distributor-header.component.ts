@@ -15,7 +15,7 @@ export class DistributorHeaderComponent implements OnInit {
   ngOnInit() {
   }
   logout() {
-    // localStorage.removeItem('adminToken');
+    localStorage.removeItem('userToken');
     this.router.navigate(['home']);
   }
 }

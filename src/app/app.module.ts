@@ -1,3 +1,4 @@
+
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -30,6 +31,31 @@ import { Body1Component } from './components/body1/body1.component';
 import { DataService } from './services/data.service';
 import { AuthService } from './services/auth.service';
 import { AdminService } from './services/admin.service';
+import { Body2Component } from './components/body2/body2.component';
+import { Body3Component } from './components/body3/body3.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { Body4Component } from './components/body4/body4.component';
+
+import { GuestAncuComponent } from './pages/guest-ancu/guest-ancu.component';
+import { GuestAnlaComponent } from './pages/guest-anla/guest-anla.component';
+import { GuestAnthanComponent } from './pages/guest-anthan/guest-anthan.component';
+import { GuestAnquaComponent } from './pages/guest-anqua/guest-anqua.component';
+import { BackgroundImageComponent } from './components/background-image/background-image.component';
+
+import { AnquaComponent } from './components/anqua/anqua.component';
+import { AnthanComponent } from './components/anthan/anthan.component';
+import { AnlaComponent } from './components/anla/anla.component';
+import { AncuComponent } from './components/ancu/ancu.component';
+import { GuestRaucuquaComponent } from './pages/guest-raucuqua/guest-raucuqua.component';
+import { RaucuquaComponent } from './components/raucuqua/raucuqua.component';
+import { MainLayoutComponent } from './pages/main-layout/main-layout.component';
+import { MainAdminComponent } from './pages/main-admin/main-admin.component';
+import { UserAncuComponent } from './pages/user-ancu/user-ancu.component';
+import { UserAnlaComponent } from './pages/user-anla/user-anla.component';
+import { UserAnthanComponent } from './pages/user-anthan/user-anthan.component';
+import { UserAnquaComponent } from './pages/user-anqua/user-anqua.component';
+import { UserRaucuquaComponent } from './pages/user-raucuqua/user-raucuqua.component';
+
 
 @NgModule({
   declarations: [
@@ -53,7 +79,29 @@ import { AdminService } from './services/admin.service';
     SignupComponent,
     FarmerRegisterComponent,
     FarmerSignupComponent,
-    Body1Component
+    Body1Component,
+    Body2Component,
+    Body3Component,
+    FooterComponent,
+    Body4Component,
+    GuestAncuComponent,
+    GuestAnlaComponent,
+    GuestAnthanComponent,
+    GuestAnquaComponent,
+    BackgroundImageComponent,
+    AncuComponent,
+    AnlaComponent,
+    AnthanComponent,
+    AnquaComponent,
+    GuestRaucuquaComponent,
+    RaucuquaComponent,
+    MainLayoutComponent,
+    MainAdminComponent,
+    UserAncuComponent,
+    UserAnlaComponent,
+    UserAnthanComponent,
+    UserAnquaComponent,
+    UserRaucuquaComponent
   ],
   imports: [
     BrowserModule,

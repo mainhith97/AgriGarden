@@ -7,10 +7,10 @@ export class AuthService implements CanActivate {
        private router: Router
     ) {}
     canActivate(): boolean {
-        if (localStorage.getItem('adminToken') != null) {
+        if (localStorage.getItem('userToken') != null) {
         return true;
         }
-        this.router.navigate(['admin']);
+        this.router.navigate(['user']);
         return false;
     }
 }

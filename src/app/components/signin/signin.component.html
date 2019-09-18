@@ -19,6 +19,10 @@
           />
           <span class="focus-input100"></span>
         </div>
+        <label
+        *ngIf="loginForm.controls['username'].invalid && loginForm.controls['username'].touched" class="text-danger">
+        Username is required
+        </label>
 
         <div
           class="wrap-input100 validate-input"
@@ -32,7 +36,12 @@
             formControlName="password"
           />
           <span class="focus-input100"></span>
+
         </div>
+        <label
+        *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="text-danger">
+        Password is required
+        </label>
 
         <div class="flex-sb-m w-full p-t-3 p-b-32">
           <div>

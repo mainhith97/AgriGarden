@@ -35,7 +35,7 @@ export class AdminLoginComponent implements OnInit {
         console.log(res);
         console.log('thanh cong');
         console.log(value);
-        // localStorage.setItem('adminToken', this.res.result.token);
+        localStorage.setItem('adminToken', this.res.token);
         this.router.navigate(['admin/main']);
       } else {
         console.log(res);

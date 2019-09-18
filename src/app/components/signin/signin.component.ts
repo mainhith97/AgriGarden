@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
 import { ILogin } from 'src/app/shared/interface';
@@ -24,8 +24,8 @@ export class SigninComponent implements OnInit {
   }
   buildForm() {
     this.loginForm = this.formBuilder.group({
-      username: [''],
-      password: ['']
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     });
   }
   submit({ value }: { value: ILogin }) {
@@ -34,13 +34,13 @@ export class SigninComponent implements OnInit {
       if (this.res.success && this.res.role === 'distributor') {
         console.log(res);
         console.log(value);
-        // localStorage.setItem('userToken', this.res.result.token);
+        localStorage.setItem('userToken', this.res.token);
         this.router.navigate(['user']);
 
       } else if (this.res.success && this.res.role === 'farmer') {
         console.log(res);
         console.log(value);
-        // localStorage.setItem('userToken', this.res.result.token);
+        localStorage.setItem('userToken', this.res.token);
         this.router.navigate(['myaccount']);
       } else {
         console.log(res);
