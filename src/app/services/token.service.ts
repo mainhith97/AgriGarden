@@ -1,0 +1,35 @@
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class TokenService {
+  constructor() {}
+
+  setUserToken(userToken) {
+    localStorage.setItem('userToken', userToken);
+  }
+
+  getUserToken() {
+    return localStorage.getItem('userToken');
+  }
+
+  deleteToken() {
+    localStorage.clear();
+  }
+
+  deleteUserToken() {
+    localStorage.removeItem('userToken');
+  }
+
+  getUserPayload() {
+    const token = this.getUserToken();
+
+    let payload;
+    if (token) {
+      payload = token.split('.')[1];
+      payload = JSON.parse(window.atob(payload));
+    }
+    return payload;
+  }
+}

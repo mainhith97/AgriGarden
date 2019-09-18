@@ -55,6 +55,8 @@ import { UserAnlaComponent } from './pages/user-anla/user-anla.component';
 import { UserAnthanComponent } from './pages/user-anthan/user-anthan.component';
 import { UserAnquaComponent } from './pages/user-anqua/user-anqua.component';
 import { UserRaucuquaComponent } from './pages/user-raucuqua/user-raucuqua.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
 
 
 @NgModule({
@@ -101,7 +103,9 @@ import { UserRaucuquaComponent } from './pages/user-raucuqua/user-raucuqua.compo
     UserAnlaComponent,
     UserAnthanComponent,
     UserAnquaComponent,
-    UserRaucuquaComponent
+    UserRaucuquaComponent,
+    NotFoundComponent,
+    AdminloginComponent
   ],
   imports: [
     BrowserModule,

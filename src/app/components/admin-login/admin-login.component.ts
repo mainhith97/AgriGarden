@@ -32,11 +32,9 @@ export class AdminLoginComponent implements OnInit {
     return this.loginService.postLogin(value).subscribe(res => {
       this.res = res;
       if (this.res.success) {
-        console.log(res);
-        console.log('thanh cong');
-        console.log(value);
-        localStorage.setItem('adminToken', this.res.token);
-        this.router.navigate(['admin/main']);
+
+        localStorage.setItem('adminToken', this.res.data);
+        this.router.navigate(['main']);
       } else {
         console.log(res);
       }

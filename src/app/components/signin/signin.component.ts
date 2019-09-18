@@ -32,15 +32,15 @@ export class SigninComponent implements OnInit {
     return this.loginService.postLogin2(value).subscribe(res => {
       this.res = res;
       if (this.res.success && this.res.role === 'distributor') {
-        console.log(res);
-        console.log(value);
-        localStorage.setItem('userToken', this.res.token);
+
+        localStorage.setItem('userToken', this.res.data);
+
         this.router.navigate(['user']);
 
       } else if (this.res.success && this.res.role === 'farmer') {
-        console.log(res);
-        console.log(value);
-        localStorage.setItem('userToken', this.res.token);
+
+        localStorage.setItem('userToken', this.res.data);
+
         this.router.navigate(['myaccount']);
       } else {
         console.log(res);

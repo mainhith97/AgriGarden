@@ -10,7 +10,7 @@ export class AuthService implements CanActivate {
         if (localStorage.getItem('userToken') != null) {
         return true;
         }
-        this.router.navigate(['user']);
+        this.router.navigate(['login']);
         return false;
     }
 }

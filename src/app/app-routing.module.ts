@@ -22,6 +22,9 @@ import { UserAncuComponent } from './pages/user-ancu/user-ancu.component';
 import { UserAnlaComponent } from './pages/user-anla/user-anla.component';
 import { UserAnquaComponent } from './pages/user-anqua/user-anqua.component';
 import { UserAnthanComponent } from './pages/user-anthan/user-anthan.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AuthGuard } from './services/auth.guard';
+import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
 
 const routes: Routes = [
   // { path: 'home',  component: HomeComponent },
@@ -56,7 +59,7 @@ const routes: Routes = [
   {
     path: '',
     component: MainLayoutComponent,
-    canActivate: [AuthService],
+    canActivate: [AuthGuard],
     children: [
 
       { path: 'user', component: DistributorLayoutComponent },
@@ -69,29 +72,25 @@ const routes: Routes = [
       { path: 'myaccount', component: FarmerLayoutComponent },
     ]
   },
-  // { path: 'admin/login', component: AdminLoginComponent },
   // {
-  //   path: 'admin',
+  //   path: '',
   //   component: MainAdminComponent,
   //   canActivate: [AdminService],
 
   //   children: [
-  //     { path: 'admin/main', component: AdminlayoutComponent },
+  //     { path: 'main', component: AdminlayoutComponent },
 
   //   ]
   // },
   { path: 'login', component: LoginComponent },
-  { path: 'admin', component: AdminLoginComponent },
-  { path: 'admin/main', component: AdminlayoutComponent }
+  { path: 'register',  component: RegisterComponent },
+  { path: 'admin', component: AdminloginComponent },
+  { path: '**', component: NotFoundComponent }
 ];
 
 @NgModule({
   imports: [
-    RouterModule.forRoot(
-      routes,
-      { enableTracing: true } // <-- debugging purposes only
-    ),
-  ],
+    RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
