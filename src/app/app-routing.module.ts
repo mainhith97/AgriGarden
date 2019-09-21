@@ -25,6 +25,9 @@ import { UserAnthanComponent } from './pages/user-anthan/user-anthan.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AuthGuard } from './services/auth.guard';
 import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
+import { FarmerService } from './services/farmer.service';
+import { AboutLayoutComponent } from './pages/about-layout/about-layout.component';
+import { ContactLayoutComponent } from './pages/contact-layout/contact-layout.component';
 
 const routes: Routes = [
   // { path: 'home',  component: HomeComponent },
@@ -56,10 +59,12 @@ const routes: Routes = [
   { path: 'cay_rau_an_la', component: GuestAnlaComponent },
   { path: 'hoa_qua', component: GuestAnquaComponent },
   { path: 'cay_rau_an_than', component: GuestAnthanComponent },
+  { path: 'about', component: AboutLayoutComponent },
+  { path: 'contact', component: ContactLayoutComponent },
   {
     path: '',
     component: MainLayoutComponent,
-    canActivate: [AuthGuard],
+    canActivate: [AuthService],
     children: [
 
       { path: 'user', component: DistributorLayoutComponent },
@@ -68,22 +73,32 @@ const routes: Routes = [
       { path: 'user/cay_rau_an_la', component: UserAnlaComponent },
       { path: 'user/hoa_qua', component: UserAnquaComponent },
       { path: 'user/cay_rau_an_than', component: UserAnthanComponent },
-
-      { path: 'myaccount', component: FarmerLayoutComponent },
+      // { path: 'myaccount', component: FarmerLayoutComponent }
     ]
   },
-  // {
-  //   path: '',
-  //   component: MainAdminComponent,
-  //   canActivate: [AdminService],
+  {
+    path: '',
+    component: MainAdminComponent,
+    canActivate: [AdminService],
 
-  //   children: [
-  //     { path: 'main', component: AdminlayoutComponent },
+    children: [
+      { path: 'main', component: AdminlayoutComponent },
 
-  //   ]
-  // },
+    ]
+  },
+  {
+    path: '',
+    component: MainLayoutComponent,
+    canActivate: [FarmerService],
+
+    children: [
+      { path: 'myaccount', component: FarmerLayoutComponent },
+
+    ]
+  },
   { path: 'login', component: LoginComponent },
   { path: 'register',  component: RegisterComponent },
+  { path: 'farmer_register',  component: FarmerRegisterComponent },
   { path: 'admin', component: AdminloginComponent },
   { path: '**', component: NotFoundComponent }
 ];

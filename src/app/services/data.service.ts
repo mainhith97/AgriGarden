@@ -9,6 +9,8 @@ const adminToken = localStorage.getItem('adminToken');
 console.log(adminToken);
 const userToken = localStorage.getItem('userToken');
 console.log(userToken);
+const farmerToken = localStorage.getItem('farmerToken');
+console.log(farmerToken);
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -27,6 +29,7 @@ export class DataService {
   apiUrl = config.apiUrl;
   adminPrefix = 'admin';
   userPrefix = 'user';
+  farmerPrefix = 'farmer';
 
   postLogin(adminLogin: ILogin): Observable<boolean> {
     return this.http.post<boolean>(`${this.apiUrl}/${this.adminPrefix}/login`, adminLogin)
@@ -57,6 +60,17 @@ export class DataService {
         catchError(this.handleError)
       );
   }
+  postRegister2(farmerRegister: IRegister): Observable<boolean> {
+    return this.http.post<boolean>(`${this.apiUrl}/${this.farmerPrefix}/register`, farmerRegister)
+      .pipe(
+        map(response => {
+          return response;
+        }),
+        catchError(this.handleError)
+      );
+  }
+
+
   handleError(error: HttpErrorResponse) {
     return throwError(error.error);
   }

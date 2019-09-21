@@ -15,7 +15,7 @@ export class FarmerHeaderComponent implements OnInit {
   ngOnInit() {
   }
   logout() {
-    localStorage.removeItem('userToken');
+    localStorage.removeItem('farmerToken');
     this.router.navigate(['home']);
   }
 }

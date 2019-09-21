@@ -57,6 +57,10 @@ import { UserAnquaComponent } from './pages/user-anqua/user-anqua.component';
 import { UserRaucuquaComponent } from './pages/user-raucuqua/user-raucuqua.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
+import { AboutComponent } from './components/about/about.component';
+import { AboutLayoutComponent } from './pages/about-layout/about-layout.component';
+import { ContactLayoutComponent } from './pages/contact-layout/contact-layout.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 
 @NgModule({
@@ -105,7 +109,11 @@ import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
     UserAnquaComponent,
     UserRaucuquaComponent,
     NotFoundComponent,
-    AdminloginComponent
+    AdminloginComponent,
+    AboutComponent,
+    AboutLayoutComponent,
+    ContactLayoutComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

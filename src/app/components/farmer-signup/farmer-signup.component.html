@@ -2,7 +2,7 @@
   <section class="signup">
     <div class="container">
       <div class="signup-content">
-        <form method="POST" id="signup-form" class="signup-form">
+        <form [formGroup]="registerForm" (ngSubmit) = "submit(registerForm)" id="signup-form" class="signup-form">
           <h2 class="form-title">ĐĂNG KÝ CUNG CẤP NÔNG SẢN</h2>
           <div class="form-group">
             <input
@@ -11,15 +11,17 @@
               name="username"
               id="username"
               placeholder="Username"
+              formControlName="username"
             />
           </div>
           <div class="form-group">
             <input
-              type="text"
+              type="password"
               class="form-input"
               name="password"
               id="password"
               placeholder="Password"
+              formControlName="password"
             />
             <span
               toggle="#password"
@@ -33,6 +35,16 @@
               name="name"
               id="name"
               placeholder="Họ Tên"
+              formControlName="name"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-input"
+              name="company_name"
+              placeholder="Tên nông trại/trang trại"
+              formControlName="company_name"
             />
           </div>
           <div class="form-group">
@@ -42,15 +54,7 @@
               name="email"
               id="email"
               placeholder="Email"
-            />
-          </div>
-          <div class="form-group">
-            <input
-              type="text"
-              class="form-input"
-              name="tel"
-              id="tel"
-              placeholder="Telephone"
+              formControlName="email"
             />
           </div>
           <div class="form-group">
@@ -60,6 +64,17 @@
               name="address"
               id="address"
               placeholder="Địa chỉ"
+              formControlName="address"
+            />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-input"
+              name="telephone"
+              id="telephone"
+              placeholder="Telephone"
+              formControlName="telephone"
             />
           </div>
           <div class="form-group">
@@ -69,6 +84,7 @@
               name="description"
               id="description"
               placeholder="Mô tả (nếu có)"
+              formControlName="description"
             />
           </div>
           <div class="form-group">

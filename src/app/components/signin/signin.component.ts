@@ -39,7 +39,7 @@ export class SigninComponent implements OnInit {
 
       } else if (this.res.success && this.res.role === 'farmer') {
 
-        localStorage.setItem('userToken', this.res.data);
+        localStorage.setItem('farmerToken', this.res.data);
 
         this.router.navigate(['myaccount']);
       } else {

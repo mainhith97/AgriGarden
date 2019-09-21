@@ -1,0 +1,25 @@
+.contact-section {
+	padding-top: 80px;
+  padding-bottom: 100px;
+  margin-bottom: 30px;
+	position: relative;
+}
+
+.contact-info h3 {
+  margin-bottom: 50px;
+  color: #82ae46
+}
+
+.map {
+	position: absolute;
+	width: calc(50% - 50px);
+	height: 100%;
+	right: 0;
+	top: 0;
+	background: #ddd;
+}
+
+.map iframe {
+	width: 100%;
+	height: 100%;
+}
