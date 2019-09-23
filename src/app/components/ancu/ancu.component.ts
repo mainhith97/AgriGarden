@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/services/product.service';
 
 @Component({
   selector: 'app-ancu',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AncuComponent implements OnInit {
 
-  constructor() { }
+  res: any;
+  data: any;
+  constructor(
+    private productService: ProductService
+  ) { }
 
   ngOnInit() {
+    this.getListProduct1();
   }
 
+  getListProduct1() {
+
+    this.productService.getListProduct1().subscribe(res => {
+      this.res = res;
+      if (this.res.success) {
+                this.data = this.res.data;
+      }
+    });
+  }
 }
