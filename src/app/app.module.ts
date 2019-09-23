@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -61,6 +61,9 @@ import { AboutComponent } from './components/about/about.component';
 import { AboutLayoutComponent } from './pages/about-layout/about-layout.component';
 import { ContactLayoutComponent } from './pages/contact-layout/contact-layout.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { TokenInterceptor } from './services/token-interceptor';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
+import { ProductComponent } from './components/product/product.component';
 
 
 @NgModule({
@@ -113,7 +116,9 @@ import { ContactComponent } from './components/contact/contact.component';
     AboutComponent,
     AboutLayoutComponent,
     ContactLayoutComponent,
-    ContactComponent
+    ContactComponent,
+    ProductPageComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -124,7 +129,7 @@ import { ContactComponent } from './components/contact/contact.component';
     BrowserAnimationsModule,
     OwlModule
   ],
-  providers: [DataService, AuthService, AdminService],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }, DataService, AuthService, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

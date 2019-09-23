@@ -12,11 +12,11 @@ a:focus {
 	outline: none;
 }
 
-ul,
-ol {
-	padding: 0;
-	margin: 0;
-}
+// ul,
+// ol {
+// 	padding: 0;
+// 	margin: 0;
+// }
 
 /*---------------------
   Helper CSS
@@ -225,9 +225,9 @@ button.bg-primary:focus {
 	background: #82ae46;
 }
 
-.main-menu {
-	list-style: none;
-}
+// .main-menu {
+// 	list-style: none;
+// }
 
 .main-menu li {
 	display: inline-block;
@@ -255,7 +255,6 @@ button.bg-primary:focus {
 }
 .main-menu .sub-menu {
 	position: absolute;
-	list-style: none;
 	width: 220px;
 	left: 0;
 	top: 100%;
@@ -275,7 +274,11 @@ button.bg-primary:focus {
 .main-menu .sub-menu li {
 	display: block;
 }
-
+.main-menu .sub-menu li::before {
+  content: "•"; color: red;
+  position: absolute;
+  padding-left: 5px;
+}
 .main-menu .sub-menu li a {
 	display: block;
 	color: #000;

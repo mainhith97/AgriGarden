@@ -28,6 +28,7 @@ import { AdminloginComponent } from './pages/adminlogin/adminlogin.component';
 import { FarmerService } from './services/farmer.service';
 import { AboutLayoutComponent } from './pages/about-layout/about-layout.component';
 import { ContactLayoutComponent } from './pages/contact-layout/contact-layout.component';
+import { ProductPageComponent } from './pages/product-page/product-page.component';
 
 const routes: Routes = [
   // { path: 'home',  component: HomeComponent },
@@ -61,6 +62,7 @@ const routes: Routes = [
   { path: 'cay_rau_an_than', component: GuestAnthanComponent },
   { path: 'about', component: AboutLayoutComponent },
   { path: 'contact', component: ContactLayoutComponent },
+  { path: 'product', component: ProductPageComponent },
   {
     path: '',
     component: MainLayoutComponent,

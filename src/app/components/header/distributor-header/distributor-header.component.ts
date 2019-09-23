@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-distributor-header',
@@ -7,15 +8,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./distributor-header.component.scss']
 })
 export class DistributorHeaderComponent implements OnInit {
-
+  res: any;
+  data: any;
   constructor(
-    private router: Router
+    private router: Router,
+    private userService: DataService
   ) { }
 
   ngOnInit() {
+    // this.getProfile();
   }
   logout() {
     localStorage.removeItem('userToken');
     this.router.navigate(['home']);
   }
+  // getProfile() {
+
+  //   this.userService.getProfile().subscribe(res => {
+  //     this.res = res;
+  //     if (this.res.success) {
+  //               this.data = this.res.data;
+  //     }
+  //   });
+  // }
 }

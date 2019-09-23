@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ILogin, IRegister } from '../shared/interface';
+import { ILogin, IRegister, User } from '../shared/interface';
 import { Observable, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
@@ -15,7 +15,7 @@ console.log(farmerToken);
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type': 'application/json',
-    Authorization: `Bearer ${adminToken}`
+    Authorization: `Bearer ${userToken}`
   })
 };
 
@@ -69,6 +69,16 @@ export class DataService {
         catchError(this.handleError)
       );
   }
+
+  // getProfile(): Observable<boolean> {
+  //   return this.http.get<boolean>(`${this.apiUrl}/getProfile`)
+  //     .pipe(
+  //       map(response => {
+  //         return response;
+  //       }),
+  //       catchError(this.handleError)
+  //     );
+  // }
 
 
   handleError(error: HttpErrorResponse) {

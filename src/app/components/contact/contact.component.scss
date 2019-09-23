@@ -1,25 +1,51 @@
-.contact-section {
+.contact {
 	padding-top: 80px;
-  padding-bottom: 100px;
-  margin-bottom: 30px;
 	position: relative;
 }
 
-.contact-info h3 {
-  margin-bottom: 50px;
+.contact-info h3, h5 {
   color: #82ae46
 }
-
-.map {
+.contact-info h3 {
+  margin-bottom: 50px;
+}
+.contact .map {
 	position: absolute;
-	width: calc(50% - 50px);
-	height: 100%;
+  width: calc(50% - 50px);
+  width:50%;
+	height: 80%;
 	right: 0;
-	top: 0;
+	top: 80px;
 	background: #ddd;
 }
 
-.map iframe {
+.contact .map iframe {
+	width: 100%;
+	height: 100%;
+}
+
+.list-farmer{
+  padding-top: 80px;
+  margin-bottom: 50px;
+  position: relative;
+}
+.list-farmer ol{
+  padding-left: 0px;
+}
+.list-farmer h5{
+  font-size: 25px;
+}
+.list-farmer .map {
+	position: absolute;
+  width: calc(50% - 50px);
+  width:50%;
+	height: 80%;
+	right: 0;
+	top: 130px;
+	background: #ddd;
+}
+
+.list-farmer .map iframe {
 	width: 100%;
 	height: 100%;
 }
