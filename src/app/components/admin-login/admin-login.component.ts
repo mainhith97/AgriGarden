@@ -33,7 +33,7 @@ export class AdminLoginComponent implements OnInit {
       this.res = res;
       if (this.res.success) {
 
-        localStorage.setItem('adminToken', this.res.data);
+        localStorage.setItem('adminToken', this.res.result);
         this.router.navigate(['main']);
       } else {
         console.log(res);

@@ -10,25 +10,26 @@ import { DataService } from 'src/app/services/data.service';
 export class DistributorHeaderComponent implements OnInit {
   res: any;
   data: any;
+  username = '';
   constructor(
     private router: Router,
-    private userService: DataService
+    private dataService: DataService
   ) { }
 
   ngOnInit() {
-    // this.getProfile();
+    this.getProfile();
   }
   logout() {
     localStorage.removeItem('userToken');
     this.router.navigate(['home']);
   }
-  // getProfile() {
+  getProfile() {
 
-  //   this.userService.getProfile().subscribe(res => {
-  //     this.res = res;
-  //     if (this.res.success) {
-  //               this.data = this.res.data;
-  //     }
-  //   });
-  // }
+    this.dataService.getProfile().subscribe(res => {
+      this.res = res;
+      if (this.res.success) {
+                this.data = this.res.result;
+      }
+    });
+  }
 }

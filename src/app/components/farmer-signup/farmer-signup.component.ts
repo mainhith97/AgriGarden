@@ -40,7 +40,7 @@ export class FarmerSignupComponent implements OnInit {
       if (this.res.success) {
         console.log(res);
         console.log(value);
-        localStorage.setItem('farmerToken', this.res.data);
+        localStorage.setItem('farmerToken', this.res.result);
         this.router.navigate(['myaccount']);
 
       } else {

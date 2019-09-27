@@ -10,7 +10,7 @@ export class AdminService implements CanActivate {
         if (localStorage.getItem('adminToken') != null) {
         return true;
         }
-        this.router.navigate(['admin/login']);
+        this.router.navigate(['admin']);
         return false;
     }
 }

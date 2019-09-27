@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: 'https://mighty-chamber-28736.herokuapp.com/'
+  apiUrl: 'http://localhost:3000'
 };
 
 /*

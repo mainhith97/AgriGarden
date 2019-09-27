@@ -34,13 +34,13 @@ export class SigninComponent implements OnInit {
       this.res = res;
       if (this.res.success && this.res.role === 'distributor') {
 
-        localStorage.setItem('userToken', this.res.data);
+        localStorage.setItem('userToken', this.res.result);
 
         this.router.navigate(['user']);
 
       } else if (this.res.success && this.res.role === 'farmer') {
 
-        localStorage.setItem('farmerToken', this.res.data);
+        localStorage.setItem('farmerToken', this.res.result);
 
         this.router.navigate(['myaccount']);
       } else {

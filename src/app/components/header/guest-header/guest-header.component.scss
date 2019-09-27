@@ -244,7 +244,9 @@ button.bg-primary:focus {
   position: relative;
   text-decoration: none;
 }
-
+.main-menu li a.disabled{
+  pointer-events: none;
+}
 .main-menu li:hover>a {
 	color: #f51167;
 }

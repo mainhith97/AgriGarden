@@ -16,6 +16,10 @@
           />
           <span class="focus-input100"></span>
         </div>
+        <label
+        *ngIf="registerForm.controls['username'].invalid && registerForm.controls['username'].touched" class="text-danger">
+        Username is required
+        </label>
 
         <div
           class="wrap-input100 validate-input"
@@ -30,6 +34,10 @@
           />
           <span class="focus-input100"></span>
         </div>
+        <label
+        *ngIf="registerForm.controls['password'].invalid && registerForm.controls['password'].touched" class="text-danger">
+        Password is required
+        </label>
 
         <div class="wrap-input100 validate-input" data-validate="">
           <input
@@ -64,6 +72,10 @@
           />
           <span class="focus-input100"></span>
         </div>
+        <label
+        *ngIf="registerForm.controls['email'].invalid && registerForm.controls['email'].touched" class="text-danger">
+        Email is required
+        </label>
 
         <div class="wrap-input100 validate-input" data-validate="">
           <input
@@ -87,16 +99,16 @@
           <span class="focus-input100"></span>
         </div>
 
-        <div class="wrap-input100 validate-input" data-validate="">
+        <!-- <div class="wrap-input100 validate-input" data-validate="">
           <input
             class="input100"
             type="text"
             name="description"
-            placeholder="Mô tả(nếu có)"
+            placeholder="Mô tả"
             formControlName="description"
           />
           <span class="focus-input100"></span>
-        </div>
+        </div> -->
 
         <div class="container-login100-form-btn">
           <button class="login100-form-btn" type="submit">

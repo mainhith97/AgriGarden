@@ -40,7 +40,7 @@ export class SignupComponent implements OnInit {
       if (this.res.success) {
         console.log(res);
         console.log(value);
-        localStorage.setItem('userToken', this.res.data);
+        localStorage.setItem('userToken', this.res.result);
         this.router.navigate(['user']);
 
       } else {

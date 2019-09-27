@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ILogin, IRegister, User } from '../shared/interface';
 import { Observable, throwError } from 'rxjs';
-import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { map, catchError } from 'rxjs/operators';
 import { environment as config } from '../../environments/environment';
 
@@ -70,15 +70,15 @@ export class DataService {
       );
   }
 
-  // getProfile(): Observable<boolean> {
-  //   return this.http.get<boolean>(`${this.apiUrl}/getProfile`)
-  //     .pipe(
-  //       map(response => {
-  //         return response;
-  //       }),
-  //       catchError(this.handleError)
-  //     );
-  // }
+  getProfile(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${this.userPrefix}/getProfile`)
+      .pipe(
+        map(response => {
+          return response;
+        }),
+        catchError(this.handleError)
+      );
+  }
 
 
   handleError(error: HttpErrorResponse) {
