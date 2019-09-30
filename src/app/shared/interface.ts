@@ -25,4 +25,7 @@ export class User {
   description: string;
   token?: string;
 }
+export interface ISearch {
+  key: string;
+}
 

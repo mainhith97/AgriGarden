@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GuestDokhoComponent } from './guest-dokho.component';
+import { SearchComponent } from './search.component';
 
-describe('GuestDokhoComponent', () => {
-  let component: GuestDokhoComponent;
-  let fixture: ComponentFixture<GuestDokhoComponent>;
+describe('SearchComponent', () => {
+  let component: SearchComponent;
+  let fixture: ComponentFixture<SearchComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GuestDokhoComponent ]
+      declarations: [ SearchComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GuestDokhoComponent);
+    fixture = TestBed.createComponent(SearchComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

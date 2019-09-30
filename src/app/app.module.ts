@@ -67,22 +67,21 @@ import { ProductComponent } from './components/product/product.component';
 import { BlobHttpInterceptor } from './services/blob-interceptor';
 import { HatgiongHoaComponent } from './components/hatgiong-hoa/hatgiong-hoa.component';
 import { HatgiongRauComponent } from './components/hatgiong-rau/hatgiong-rau.component';
-import { DoKhoComponent } from './components/do-kho/do-kho.component';
 import { TraComponent } from './components/tra/tra.component';
 import { NamComponent } from './components/nam/nam.component';
 import { GuestHatgionghoaComponent } from './pages/guest-hatgionghoa/guest-hatgionghoa.component';
 import { GuestHatgiongrauComponent } from './pages/guest-hatgiongrau/guest-hatgiongrau.component';
-import { GuestDokhoComponent } from './pages/guest-dokho/guest-dokho.component';
 import { GuestTraComponent } from './pages/guest-tra/guest-tra.component';
 import { GuestNamComponent } from './pages/guest-nam/guest-nam.component';
 import { UserHatgionghoaComponent } from './pages/user-hatgionghoa/user-hatgionghoa.component';
 import { UserHatgiongrauComponent } from './pages/user-hatgiongrau/user-hatgiongrau.component';
-import { UserDokhoComponent } from './pages/user-dokho/user-dokho.component';
 import { UserTraComponent } from './pages/user-tra/user-tra.component';
 import { UserNamComponent } from './pages/user-nam/user-nam.component';
 import { SafeHtmlPipe } from './shared/safe-html.pipe';
 import { UserContactComponent } from './pages/user-contact/user-contact.component';
 import { UserProductpageComponent } from './pages/user-productpage/user-productpage.component';
+import { SearchComponent } from './components/search/search.component';
+import { SearchLayoutComponent } from './pages/search-layout/search-layout.component';
 
 
 @NgModule({
@@ -140,22 +139,21 @@ import { UserProductpageComponent } from './pages/user-productpage/user-productp
     ProductComponent,
     HatgiongHoaComponent,
     HatgiongRauComponent,
-    DoKhoComponent,
     TraComponent,
     NamComponent,
     GuestHatgionghoaComponent,
     GuestHatgiongrauComponent,
-    GuestDokhoComponent,
     GuestTraComponent,
     GuestNamComponent,
     UserHatgionghoaComponent,
     UserHatgiongrauComponent,
-    UserDokhoComponent,
     UserTraComponent,
     UserNamComponent,
     SafeHtmlPipe,
     UserContactComponent,
-    UserProductpageComponent
+    UserProductpageComponent,
+    SearchComponent,
+    SearchLayoutComponent
   ],
   imports: [
     BrowserModule,

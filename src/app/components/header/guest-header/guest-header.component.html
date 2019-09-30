@@ -46,8 +46,8 @@
         </div>
 
         <div class="col-xl-6 col-lg-5">
-          <form class="header-search-form">
-            <input type="text" placeholder="Tìm kiếm" />
+          <form [formGroup]="searchForm" (ngSubmit) = "submit(searchForm)" class="header-search-form">
+            <input type="text" formControlName="key" placeholder="Tìm kiếm" />
             <button><i class="fa fa-search"></i></button>
           </form>
         </div>
@@ -85,7 +85,6 @@
         <ul class="sub-menu">
           <li><a href="" [routerLink]="['/hat-giong-rau-sach']">Hạt giống rau sạch</a></li>
           <li><a href="" [routerLink]="['/hat-giong-hoa']">Hạt giống hoa</a></li>
-          <li><a href="" [routerLink]="['/do-kho']">Đồ khô</a></li>
           <li><a href="" [routerLink]="['/tra-cac-loai']">Trà các loại</a></li>
           <li><a href="" [routerLink]="['/nam-cac-loai']">Nấm các loại</a></li>
         </ul>

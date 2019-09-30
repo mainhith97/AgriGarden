@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DoKhoComponent } from './do-kho.component';
+import { SearchLayoutComponent } from './search-layout.component';
 
-describe('DoKhoComponent', () => {
-  let component: DoKhoComponent;
-  let fixture: ComponentFixture<DoKhoComponent>;
+describe('SearchLayoutComponent', () => {
+  let component: SearchLayoutComponent;
+  let fixture: ComponentFixture<SearchLayoutComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DoKhoComponent ]
+      declarations: [ SearchLayoutComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(DoKhoComponent);
+    fixture = TestBed.createComponent(SearchLayoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

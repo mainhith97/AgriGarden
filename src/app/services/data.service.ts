@@ -80,7 +80,15 @@ export class DataService {
       );
   }
 
-
+  // isLoggedIn(): Observable<any> {
+  //   return this.http.get<any>(`${this.apiUrl}/${this.userPrefix}/isLoggedIn`)
+  //     .pipe(
+  //       map(response => {
+  //         return response;
+  //       }),
+  //       catchError(this.handleError)
+  //     );
+  // }
   handleError(error: HttpErrorResponse) {
     return throwError(error.error);
   }

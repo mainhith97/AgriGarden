@@ -35,7 +35,7 @@
                   aria-expanded="false"
 
                 >
-                  {{ data.username }}
+                  {{ data?.username }}
                 </button>
                 <div class="dropdown-menu" aria-labelledby="dropdownMenuUser">
                   <ul class="list-unstyled">
@@ -68,7 +68,6 @@
         <ul class="sub-menu">
             <li><a href="" [routerLink]="['/user/hat-giong-rau-sach']">Hạt giống rau sạch</a></li>
             <li><a href="" [routerLink]="['/user/hat-giong-hoa']">Hạt giống hoa</a></li>
-            <li><a href="" [routerLink]="['/user/do-kho']">Đồ khô</a></li>
             <li><a href="" [routerLink]="['/user/tra-cac-loai']">Trà các loại</a></li>
             <li><a href="" [routerLink]="['/user/nam-cac-loai']">Nấm các loại</a></li>
         </ul>
