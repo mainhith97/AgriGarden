@@ -76,7 +76,8 @@ const routes: Routes = [
   { path: 'nam-cac-loai', component: GuestNamComponent },
   { path: 'contact', component: ContactLayoutComponent },
   { path: 'product/:id', component: ProductPageComponent },
-  { path: 'result', component: SearchLayoutComponent },
+  { path: 'search', component: SearchLayoutComponent },
+  // { path: 'search/', component: SearchLayoutComponent },
   {
     path: '',
     component: MainLayoutComponent,

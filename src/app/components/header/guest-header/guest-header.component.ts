@@ -33,16 +33,18 @@ export class GuestHeaderComponent implements OnInit {
   }
   buildForm() {
     this.searchForm = this.formBuilder.group({
-      key: ['']
+      keyword: ['']
     });
   }
+  // nhan nut
   submit({ value }: { value: ISearch }) {
     this.productService.search(value).subscribe(res => {
       this.res = res;
       console.log('true');
       if (this.res.success) {
         this.data = this.res.result;
-        this.router.navigate(['result']);
+        console.log(this.data);
+        this.router.navigate(['search'], { queryParams: { keyword: this.data }});
       }
     });
   }

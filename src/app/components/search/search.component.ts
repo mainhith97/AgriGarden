@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Component, OnInit, Query } from '@angular/core';
 import { ProductService } from 'src/app/services/product.service';
 import { ISearch } from 'src/app/shared/interface';
 import { FormGroup, FormBuilder } from '@angular/forms';
@@ -12,25 +13,33 @@ export class SearchComponent implements OnInit {
   searchForm: FormGroup;
   res: any;
   data: any;
+  keyword: string;
+  value: ISearch;
   constructor( private productService: ProductService,
-               private formBuilder: FormBuilder
+               private formBuilder: FormBuilder,
+               private route: ActivatedRoute
     ) { }
 
   ngOnInit() {
-    // this.getSearchResult();
+    this.route.queryParams.subscribe((queryParams: Params) => {
+      this.keyword = queryParams.keyword;
+      this.getSearchResult(this.keyword);
+    });
     this.buildForm();
   }
   buildForm() {
     this.searchForm = this.formBuilder.group({
-      key: ['']
+      keyword: ['']
     });
   }
-  getSearchResult({ value }: { value: ISearch }) {
-    this.productService.search(value).subscribe(res => {
+  // đổ dữ liệu tìm kiếm
+  getSearchResult(keyword: string) {
+    this.productService.getSearchResult(keyword).subscribe(res => {
       this.res = res;
-      console.log('true');
+      console.log('done');
       if (this.res.success) {
         this.data = this.res.result;
+        console.log(this.data);
       }
     });
   }

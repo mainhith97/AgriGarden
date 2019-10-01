@@ -138,3 +138,30 @@
   max-width: 100%;
   height: auto;
 }
+.header-search-form {
+	width: 100%;
+	position: relative;
+	padding: 0 0px;
+}
+
+.header-search-form input {
+	width: 45%;
+	height: 44px;
+	font-size: 14px;
+	border-radius: 50px;
+	border: none;
+	padding: 0 19px;
+	background: #f0f0f0;
+}
+
+.header-search-form button {
+	// position: absolute;
+	height: 100%;
+	right: 0px;
+	top: 0;
+	font-size: 26px;
+	color: #000;
+	border: none;
+	cursor: pointer;
+	background-color: transparent;
+}

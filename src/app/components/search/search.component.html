@@ -1,38 +1,46 @@
 <section class="product-filter-section">
   <div class="container">
-    <!-- <div>
-        <form [formGroup]="searchForm" (ngSubmit) = "submit(searchForm)" class="header-search-form">
-            <input type="text" formControlName="key" placeholder="Tìm kiếm" />
-            <button><i class="fa fa-search"></i></button>
-          </form>
-    </div> -->
-    <div class="section-title">
-      <p>Kết quả tìm kiếm: </p>
+    <div class="mt-5">
+      <!-- <form
+        [formGroup]="searchForm"
+        (ngSubmit)="submit(searchForm)"
+        class="header-search-form"
+      >
+        <input type="text" formControlName="keyword" placeholder="Tìm kiếm" />
+        <button><i class="fa fa-search"></i></button>
+      </form> -->
     </div>
-    <div class="row">
-      <div *ngFor="let data of data" class="col-lg-3 col-sm-6">
-        <div class="product-item">
-          <div class="pi-pic">
-            <!-- <a class="img-prod" routerLink='/product/{{data.id}}'
+    <!-- <div *ngIf="data == null"> <h4 style="text-align: center" class="title"><strong>KHÔNG CÓ SẢN PHẨM CẦN TÌM</strong></h4></div> -->
+    <div *ngIf="data != null">
+      <div class="section-title">
+        <p>Kết quả tìm kiếm:</p>
+      </div>
+      <div class="row">
+        <div *ngFor="let data of data" class="col-lg-3 col-sm-6">
+          <div class="product-item">
+            <div class="pi-pic">
+              <!-- <a class="img-prod" routerLink='/product/{{data.id}}'
                   ><img
                     src="./../../../assets/images/product-1.jpg"
                     class="img-fluid"
                     alt=""
                 /></a> -->
 
-            <a class="img-prod" routerLink="/product/{{ data.id }}"
-              ><img src="{{ data.image }}" class="img-fluid" alt=""></a>
+              <a class="img-prod" routerLink="/product/{{ data.id }}"
+                ><img src="{{ data.image }}" class="img-fluid" alt=""
+              /></a>
 
-            <!-- <img [src]=" data.image.data "> -->
-            <div class="pi-links">
-              <a href="#" class="add-card"
-                ><i class="fa fa-shopping-bag"></i><span>ADD TO CART</span></a
-              >
+              <!-- <img [src]=" data.image.data "> -->
+              <div class="pi-links">
+                <a href="#" class="add-card"
+                  ><i class="fa fa-shopping-bag"></i><span>ADD TO CART</span></a
+                >
+              </div>
             </div>
-          </div>
-          <div class="pi-text">
-            <h6>{{ data.price_per_unit }}.000đ/{{ data.unit }}</h6>
-            <p>{{ data.name }}</p>
+            <div class="pi-text">
+              <h6>{{ data.price_per_unit }}.000đ/{{ data.unit }}</h6>
+              <p>{{ data.name }}</p>
+            </div>
           </div>
         </div>
       </div>

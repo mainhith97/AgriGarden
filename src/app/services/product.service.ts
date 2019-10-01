@@ -21,7 +21,7 @@ export class ProductService {
   apiUrl = config.apiUrl;
   productPrefix = 'product';
 
-
+  // lấy danh sách sản phẩm cây ăn củ
   getListProduct1(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/get-list-product1`)
     .pipe(
@@ -31,6 +31,7 @@ export class ProductService {
         catchError(this.handleError)
     );
   }
+  // lấy danh sách sản phẩm cây ăn lá
   getListProduct2(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/get-list-product2`)
     .pipe(
@@ -40,6 +41,7 @@ export class ProductService {
         catchError(this.handleError)
     );
   }
+  // lấy danh sách sản phẩm cây ăn thân
   getListProduct3(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/get-list-product3`)
     .pipe(
@@ -49,6 +51,7 @@ export class ProductService {
         catchError(this.handleError)
     );
   }
+  // lấy danh sách sản phẩm hoa quả
   getListProduct4(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/get-list-product4`)
     .pipe(
@@ -58,6 +61,7 @@ export class ProductService {
         catchError(this.handleError)
     );
   }
+  // lấy danh sách sản phẩm hạt giống rau sạch
   getListProduct5(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/get-list-product5`)
     .pipe(
@@ -67,6 +71,7 @@ export class ProductService {
         catchError(this.handleError)
     );
   }
+  // lấy danh sách sản phẩm hạt giống hoa
   getListProduct6(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/get-list-product6`)
     .pipe(
@@ -76,6 +81,7 @@ export class ProductService {
         catchError(this.handleError)
     );
   }
+  // lấy danh sách sản phẩm trà các loại
   getListProduct7(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/get-list-product7`)
     .pipe(
@@ -85,6 +91,7 @@ export class ProductService {
         catchError(this.handleError)
     );
   }
+  // lấy danh sách sản phẩm nấm các loại
   getListProduct8(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/get-list-product8`)
     .pipe(
@@ -94,7 +101,7 @@ export class ProductService {
         catchError(this.handleError)
     );
   }
-
+// lấy chi tiết sản phẩm
   getDetailProduct(id: number): Observable<boolean> {
     return this.http.get<boolean>(`${this.apiUrl}/product/${id}`)
     .pipe(
@@ -104,6 +111,7 @@ export class ProductService {
         catchError(this.handleError)
     );
   }
+  // nhận từ khoá tìm kiếm
   search(searchItem: ISearch): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/search`, searchItem )
     .pipe(
@@ -113,15 +121,16 @@ export class ProductService {
         catchError(this.handleError)
     );
   }
-  // searchResult(searchItem: ISearch, name: string): Observable<any> {
-  //   return this.http.post<any>(`${this.apiUrl}/search/${name}`, searchItem)
-  //   .pipe(
-  //       map(response => {
-  //         return response;
-  //       }),
-  //       catchError(this.handleError)
-  //   );
-  // }
+  // lấy dữ liệu tìm kiếm đc
+  getSearchResult(keyword: string): Observable<boolean> {
+    return this.http.get<boolean>(`${this.apiUrl}/search?keyword=${keyword}`)
+    .pipe(
+        map(response => {
+          return response;
+        }),
+        catchError(this.handleError)
+    );
+  }
   handleError(error: HttpErrorResponse) {
     return throwError(error.error);
   }
