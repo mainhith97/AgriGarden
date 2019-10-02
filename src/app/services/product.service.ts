@@ -131,6 +131,17 @@ export class ProductService {
         catchError(this.handleError)
     );
   }
+
+  // lấy sản phâm mới nhất
+  getListNewest(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/get-list-newest`)
+    .pipe(
+        map(response => {
+          return response;
+        }),
+        catchError(this.handleError)
+    );
+  }
   handleError(error: HttpErrorResponse) {
     return throwError(error.error);
   }

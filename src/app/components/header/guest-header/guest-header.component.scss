@@ -214,7 +214,7 @@ button.bg-primary:focus {
 	min-width: 16px;
 	color: #fff;
 	font-size: 13px;
-	background: #f51167;
+	background: #f51170;
 	text-align: center;
 	border-radius: 30px;
 	padding: 0 2px;
@@ -248,7 +248,7 @@ button.bg-primary:focus {
   pointer-events: none;
 }
 .main-menu li:hover>a {
-	color: #f51167;
+	color: #ecff3c;
 }
 .main-menu li:hover .sub-menu {
 	visibility: visible;
@@ -277,7 +277,7 @@ button.bg-primary:focus {
 	display: block;
 }
 .main-menu .sub-menu li::before {
-  content: "•"; color: red;
+  content: "•"; color: #82ae46;
   position: absolute;
   padding-left: 5px;
 }
@@ -289,6 +289,6 @@ button.bg-primary:focus {
 }
 
 .main-menu .sub-menu li a:hover {
-	color: #f51167;
+	color: #82ae46;
 }
 

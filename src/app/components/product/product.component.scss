@@ -24,7 +24,7 @@
   display: block;
 }
 .zoom img:hover {
-  transform: scale(1.2);
+  transform: scale(1.5);
   -webkit-transform: scale(1.2);
   -moz-transform: scale(1.2);
   z-index: 0;
@@ -34,13 +34,13 @@
   font-weight: 400;
   color: #82ae46;
 }
-.product-details .provider{
+.product-details .provider {
   font-size: 14px;
   font-weight: 400;
   color: #000000;
   margin-bottom: 2rem;
 }
-.product-details .provider span{
+.product-details .provider span {
   font-size: 15px;
   font-weight: 400;
   color: #2a2dcf;
@@ -85,4 +85,21 @@
   border: 1px solid transparent;
   background: #000000;
   color: #fff;
+}
+
+.comment-form-wrap {
+  clear: both;
+}
+.form-group {
+  margin-bottom: 1rem;
+}
+.btn-primary {
+  color: #fff;
+  background-color: #82ae46;
+  border-color: #82ae46;
+}
+.btn-primary:hover {
+  color: #fff;
+  background: #82ae46;
+  border: #82ae46;
 }
