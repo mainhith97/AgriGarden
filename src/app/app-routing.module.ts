@@ -40,6 +40,8 @@ import { UserHatgionghoaComponent } from './pages/user-hatgionghoa/user-hatgiong
 import { UserContactComponent } from './pages/user-contact/user-contact.component';
 import { UserProductpageComponent } from './pages/user-productpage/user-productpage.component';
 import { SearchLayoutComponent } from './pages/search-layout/search-layout.component';
+import { ListUserComponent } from './pages/list-user/list-user.component';
+import { ListProductComponent } from './pages/list-product/list-product.component';
 
 const routes: Routes = [
   // { path: 'home',  component: HomeComponent },
@@ -85,16 +87,16 @@ const routes: Routes = [
     children: [
 
       { path: 'user', component: DistributorLayoutComponent },
-      { path: 'user/rau_cu_qua', component: UserRaucuquaComponent },
-      { path: 'user/cay_rau_an_cu', component: UserAncuComponent },
-      { path: 'user/cay_rau_an_la', component: UserAnlaComponent },
-      { path: 'user/hoa_qua', component: UserAnquaComponent },
-      { path: 'user/cay_rau_an_than', component: UserAnthanComponent },
-      { path: 'user/hat-giong-hoa', component: UserHatgionghoaComponent },
-      { path: 'user/hat-giong-rau-sach', component: UserHatgiongrauComponent },
-      { path: 'user/tra-cac-loai', component: UserTraComponent },
-      { path: 'user/nam-cac-loai', component: UserNamComponent },
-      { path: 'user/contact', component: UserContactComponent },
+      // { path: 'user/rau_cu_qua', component: UserRaucuquaComponent },
+      // { path: 'user/cay_rau_an_cu', component: UserAncuComponent },
+      // { path: 'user/cay_rau_an_la', component: UserAnlaComponent },
+      // { path: 'user/hoa_qua', component: UserAnquaComponent },
+      // { path: 'user/cay_rau_an_than', component: UserAnthanComponent },
+      // { path: 'user/hat-giong-hoa', component: UserHatgionghoaComponent },
+      // { path: 'user/hat-giong-rau-sach', component: UserHatgiongrauComponent },
+      // { path: 'user/tra-cac-loai', component: UserTraComponent },
+      // { path: 'user/nam-cac-loai', component: UserNamComponent },
+      // { path: 'user/contact', component: UserContactComponent },
       // { path: 'user/product/:id', component: UserProductpageComponent },
     ]
   },
@@ -105,6 +107,8 @@ const routes: Routes = [
 
     children: [
       { path: 'main', component: AdminlayoutComponent },
+      { path: 'get-list-user', component: ListUserComponent },
+      { path: 'get-list-product', component: ListProductComponent },
 
     ]
   },

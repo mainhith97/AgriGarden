@@ -30,7 +30,7 @@ export class DataService {
   adminPrefix = 'admin';
   userPrefix = 'user';
   farmerPrefix = 'farmer';
-
+// user login
   postLogin(adminLogin: ILogin): Observable<boolean> {
     return this.http.post<boolean>(`${this.apiUrl}/${this.adminPrefix}/login`, adminLogin)
       .pipe(
@@ -40,7 +40,7 @@ export class DataService {
         catchError(this.handleError)
       );
   }
-
+// admin login
   postLogin2(userLogin: ILogin): Observable<boolean> {
     return this.http.post<boolean>(`${this.apiUrl}/${this.userPrefix}/login`, userLogin)
       .pipe(
@@ -50,7 +50,7 @@ export class DataService {
         catchError(this.handleError)
       );
   }
-
+// user đăng ký
   postRegister(userRegister: IRegister): Observable<boolean> {
     return this.http.post<boolean>(`${this.apiUrl}/${this.userPrefix}/register`, userRegister)
       .pipe(
@@ -60,6 +60,7 @@ export class DataService {
         catchError(this.handleError)
       );
   }
+  // farmer đăng ký
   postRegister2(farmerRegister: IRegister): Observable<boolean> {
     return this.http.post<boolean>(`${this.apiUrl}/${this.farmerPrefix}/register`, farmerRegister)
       .pipe(
@@ -69,7 +70,7 @@ export class DataService {
         catchError(this.handleError)
       );
   }
-
+// lấy hồ sơ user
   getProfile(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${this.userPrefix}/getProfile`)
       .pipe(
@@ -79,16 +80,36 @@ export class DataService {
         catchError(this.handleError)
       );
   }
-
-  // isLoggedIn(): Observable<any> {
-  //   return this.http.get<any>(`${this.apiUrl}/${this.userPrefix}/isLoggedIn`)
-  //     .pipe(
-  //       map(response => {
-  //         return response;
-  //       }),
-  //       catchError(this.handleError)
-  //     );
-  // }
+// kiểm tra user có đăng nhập ko
+  isLoggedIn(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${this.userPrefix}/isLoggedIn`)
+      .pipe(
+        map(response => {
+          return response;
+        }),
+        catchError(this.handleError)
+      );
+  }
+  // lấy danh sách user
+  getListUser(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${this.adminPrefix}/get-list-user`)
+      .pipe(
+        map(response => {
+          return response;
+        }),
+        catchError(this.handleError)
+      );
+  }
+  // lấy danh sách sản phẩm
+  getListProduct(): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${this.adminPrefix}/get-list-product`)
+      .pipe(
+        map(response => {
+          return response;
+        }),
+        catchError(this.handleError)
+      );
+  }
   handleError(error: HttpErrorResponse) {
     return throwError(error.error);
   }

@@ -292,3 +292,86 @@ button.bg-primary:focus {
 	color: #82ae46;
 }
 
+.shopping-card {
+	display: inline-block;
+	position: relative;
+}
+
+.shopping-card span {
+	position: absolute;
+	top: -9px;
+	left: 100%;
+	height: 16px;
+	min-width: 16px;
+	color: #fff;
+	font-size: 13px;
+	background: #f51167;
+	text-align: center;
+	border-radius: 30px;
+	padding: 0 2px;
+	margin-left: -12px;
+}
+.header-user-dropdown .dropdown-toggle {
+  display: inline-block;
+  font-weight: 400;
+  color: #212529;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-color: transparent;
+  border: none;
+  font-size: 14px;
+  line-height: 1.5;
+  border-radius: 0;
+}
+.header-user-dropdown .dropdown-toggle:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+}
+.header-user-dropdown .dropdown-menu {
+  border: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 1px 2px 8px rgba(10, 13, 65, 0.05);
+  box-shadow: 1px 2px 8px rgba(10, 13, 65, 0.05);
+  padding: 0;
+  margin-top: 25px;
+  left: auto;
+  right: 0;
+}
+.header-user-dropdown .dropdown-menu:before {
+  content: "";
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+  position: absolute;
+  top: -10px;
+  right: 20px;
+}
+.header-user-dropdown .dropdown-menu ul {
+  margin-bottom: 0;
+  padding: 0;
+}
+.header-user-dropdown .dropdown-menu ul li a {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  clear: both;
+  font-weight: 400;
+  color: #8b8fa1;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border-bottom: 1px solid #e4e7f2;
+}
+.header-user-dropdown .dropdown-menu ul li a:hover {
+  color: #16181b;
+  text-decoration: none;
+  background-color: #f8f9fa;
+}
+.header-user-dropdown .dropdown-menu ul li:last-child a {
+  border: none;
+}

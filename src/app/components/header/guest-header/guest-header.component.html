@@ -1,5 +1,5 @@
 <header class="header-section" style="height: 100%;">
-  <div class="py-1 bg-primary">
+  <div *ngIf="data1 == false" class="py-1 bg-primary">
     <div class="container">
       <div
         class="row no-gutters d-flex align-items-start align-items-center px-md-0"
@@ -52,7 +52,7 @@
           </form>
         </div>
 
-        <div class="col-xl-4 col-lg-5">
+        <div *ngIf="data1 == false" class="col-xl-4 col-lg-5">
           <div class="user-panel">
             <div class="up-item">
               <i class="fa fa-user"></i>
@@ -65,6 +65,42 @@
             </div>
           </div>
         </div>
+
+        <div *ngIf="data1 == true" class ="col-xl-4 col-lg-5">
+          <div class="user-panel">
+            <div class="up-item">
+              <div class="shopping-card">
+                <span>{{cartItemCount}}</span>
+                <i class="fa fa-shopping-cart"></i>
+              </div>
+              <a href="#">Giỏ hàng</a>
+            </div>
+            <div class="up-item">
+              <i class="fa fa-user"></i>
+              <div class="header-user-dropdown dropdown">
+                <button
+                  class="dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuUser"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+
+                >
+                  {{ data2?.username }}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuUser">
+                  <ul class="list-unstyled">
+                    <li><a class="c-orange">Thông tin cá nhân</a></li>
+                    <li><a class="c-orange">Lịch sử đặt hàng</a></li>
+                    <li><a class="c-orange" (click) = "logout()">Log out</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>

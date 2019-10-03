@@ -82,6 +82,13 @@ import { UserContactComponent } from './pages/user-contact/user-contact.componen
 import { UserProductpageComponent } from './pages/user-productpage/user-productpage.component';
 import { SearchComponent } from './components/search/search.component';
 import { SearchLayoutComponent } from './pages/search-layout/search-layout.component';
+import { AdmintokenInterceptor } from './services/admintoken-interceptor.service';
+import { ListUserComponent } from './pages/list-user/list-user.component';
+import { GetListuserComponent } from './components/get-listuser/get-listuser.component';
+import { ListProductComponent } from './pages/list-product/list-product.component';
+import { GetListproductComponent } from './components/get-listproduct/get-listproduct.component';
+import { MycartLayoutComponent } from './pages/mycart-layout/mycart-layout.component';
+import { MycartComponent } from './components/mycart/mycart.component';
 
 
 @NgModule({
@@ -153,7 +160,13 @@ import { SearchLayoutComponent } from './pages/search-layout/search-layout.compo
     UserContactComponent,
     UserProductpageComponent,
     SearchComponent,
-    SearchLayoutComponent
+    SearchLayoutComponent,
+    ListUserComponent,
+    GetListuserComponent,
+    ListProductComponent,
+    GetListproductComponent,
+    MycartLayoutComponent,
+    MycartComponent
   ],
   imports: [
     BrowserModule,
@@ -166,6 +179,7 @@ import { SearchLayoutComponent } from './pages/search-layout/search-layout.compo
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: AdmintokenInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: BlobHttpInterceptor, multi: true },
       DataService, AuthService, AdminService],
   bootstrap: [AppComponent]

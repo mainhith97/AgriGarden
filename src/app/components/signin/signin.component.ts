@@ -36,7 +36,7 @@ export class SigninComponent implements OnInit {
 
         localStorage.setItem('userToken', this.res.result);
 
-        this.router.navigate(['user']);
+        this.router.navigate(['home']);
 
       } else if (this.res.success && this.res.role === 'farmer') {
 

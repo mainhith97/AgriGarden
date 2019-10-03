@@ -13,6 +13,13 @@ export class TokenService {
   getUserToken() {
     return localStorage.getItem('userToken');
   }
+  setAdminToken(adminToken) {
+    localStorage.setItem('adminToken', adminToken);
+  }
+
+  getAdminToken() {
+    return localStorage.getItem('adminToken');
+  }
 
   deleteToken() {
     localStorage.clear();

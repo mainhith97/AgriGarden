@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
 
 @Injectable()
-export class TokenInterceptor implements HttpInterceptor {
+export class AdmintokenInterceptor implements HttpInterceptor {
   constructor(private tokenService: TokenService, private router: Router) {}
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any> | HttpResponse<any>> {
@@ -14,7 +14,7 @@ export class TokenInterceptor implements HttpInterceptor {
       'Content-Type': 'application/json',
       Accept: 'application/json'
     };
-    const token = this.tokenService.getUserToken();
+    const token = this.tokenService.getAdminToken();
     if (token) {
 
       // tslint:disable-next-line: no-string-literal
@@ -27,7 +27,7 @@ export class TokenInterceptor implements HttpInterceptor {
     return next.handle(_req).pipe(
       map((res: HttpResponse<any>) => {
         if (res.body && !res.body.success) {
-          this.router.navigate(['home']);
+          this.router.navigate(['main']);
         }
         return res;
       })

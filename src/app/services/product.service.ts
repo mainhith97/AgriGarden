@@ -142,6 +142,16 @@ export class ProductService {
         catchError(this.handleError)
     );
   }
+  // thêm vào giỏ hàng
+  addProductToCart(products: any) {
+    localStorage.setItem('product', JSON.stringify(products));
+  }
+  getProductFromCart() {
+    return JSON.parse(localStorage.getItem('product'));
+  }
+  removeAllProductFromCart() {
+    return localStorage.removeItem('product');
+  }
   handleError(error: HttpErrorResponse) {
     return throwError(error.error);
   }
