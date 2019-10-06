@@ -1,1 +1,46 @@
 
+<ngb-accordion #acc="ngbAccordion" [closeOthers]="true" activeIds="static-1">
+  <ngb-panel id="static-1" title="Item Details">
+    <ng-template ngbPanelContent>
+
+        <div id="collapseExample" [ngbCollapse]="false">
+            <div class="card">
+              <div class="card-body">
+               <h1 style="color:chocolate">Items in your cart:<span style="margin-left: 5%;margin-right: 22%;color: greenyellow">
+                  Total value is: {{allTotal}}</span>
+                  <!-- <button class="btn btn-outline-success" (click)="acc.toggle('static-2')">CheckOut</button> -->
+                 </h1>
+
+                  <table class="table table-bordered table-responsive table-hover">
+                    <thead class="thead-light">
+                    <tr>
+                      <th>Image</th>
+                      <th>Name</th>
+                      <th>Price</th>
+                      <th>Quantity</th>
+                      <th>Add/Remove</th>
+                      <th>Total For Item</th>
+                    </tr>
+                    </thead>
+                    <tr *ngFor="let prod of productAddedTocart;let q = index">
+                      <!-- <td><img src="data:image/png;base64,{{prod.ImageFile}}" width="250px;" height="270px;"/></!-->
+                      <td class="text-center">{{prod.name}}</td>
+                      <td>{{prod.price_per_unit}}</td>
+                      <td>{{prod.quantity}}</td>
+                      <td>
+                        <div class="form-inline">
+                        <button type="button" (click)="onAddQuantity(prod)" class="btn btn-success">+</button>
+                        <input type="text"  [ngModel] ="prod.quantity" (ngModelChange) ="prod.Quantity=$event" class="form-control form-inline" id="count">
+                        <button type="button" (click)="onRemoveQuantity(prod)" class="btn btn-danger">-</button>
+                        </div>
+                      </td>
+                      <td>{{prod.price_per_unit * prod.quantity}}</td>
+                    </tr>
+                  </table>
+              </div>
+            </div>
+          </div>
+    </ng-template>
+  </ngb-panel>
+</ngb-accordion>
+

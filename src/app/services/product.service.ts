@@ -21,86 +21,27 @@ export class ProductService {
   apiUrl = config.apiUrl;
   productPrefix = 'product';
 
-  // lấy danh sách sản phẩm cây ăn củ
-  getListProduct1(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/get-list-product1`)
+    // get list type
+    getListType(): Observable<any> {
+      return this.http.get<any>(`${this.apiUrl}/type`)
+      .pipe(
+          map(response => {
+            return response;
+          }),
+          catchError(this.handleError)
+      );
+    }
+  // get list product by category
+  getListProductByType(id: number): Observable<boolean> {
+    return this.http.get<boolean>(`${this.apiUrl}/category/${id}`)
     .pipe(
         map(response => {
-          return response;
+            return response;
         }),
         catchError(this.handleError)
     );
   }
-  // lấy danh sách sản phẩm cây ăn lá
-  getListProduct2(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/get-list-product2`)
-    .pipe(
-        map(response => {
-          return response;
-        }),
-        catchError(this.handleError)
-    );
-  }
-  // lấy danh sách sản phẩm cây ăn thân
-  getListProduct3(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/get-list-product3`)
-    .pipe(
-        map(response => {
-          return response;
-        }),
-        catchError(this.handleError)
-    );
-  }
-  // lấy danh sách sản phẩm hoa quả
-  getListProduct4(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/get-list-product4`)
-    .pipe(
-        map(response => {
-          return response;
-        }),
-        catchError(this.handleError)
-    );
-  }
-  // lấy danh sách sản phẩm hạt giống rau sạch
-  getListProduct5(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/get-list-product5`)
-    .pipe(
-        map(response => {
-          return response;
-        }),
-        catchError(this.handleError)
-    );
-  }
-  // lấy danh sách sản phẩm hạt giống hoa
-  getListProduct6(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/get-list-product6`)
-    .pipe(
-        map(response => {
-          return response;
-        }),
-        catchError(this.handleError)
-    );
-  }
-  // lấy danh sách sản phẩm trà các loại
-  getListProduct7(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/get-list-product7`)
-    .pipe(
-        map(response => {
-          return response;
-        }),
-        catchError(this.handleError)
-    );
-  }
-  // lấy danh sách sản phẩm nấm các loại
-  getListProduct8(): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/get-list-product8`)
-    .pipe(
-        map(response => {
-          return response;
-        }),
-        catchError(this.handleError)
-    );
-  }
+
 // lấy chi tiết sản phẩm
   getDetailProduct(id: number): Observable<boolean> {
     return this.http.get<boolean>(`${this.apiUrl}/product/${id}`)

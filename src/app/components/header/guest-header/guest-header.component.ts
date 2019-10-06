@@ -16,6 +16,8 @@ export class GuestHeaderComponent implements OnInit {
   res2: any;
   data1: any;
   data2: any;
+  res3: any;
+  data3: any;
   searchForm: FormGroup;
   res: any;
   data: any;
@@ -29,11 +31,11 @@ export class GuestHeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.isLoggedIn();
     // giỏ hàng
     this.sharedService.currentMessage.subscribe(msg => this.cartItemCount = msg);
     this.buildForm();
     this.getProfile();
+    this.getListType();
   }
   buildForm() {
     this.searchForm = this.formBuilder.group({
@@ -48,32 +50,33 @@ export class GuestHeaderComponent implements OnInit {
       if (this.res.success) {
         this.data = this.res.result;
         console.log(this.data);
-        this.router.navigate(['search'], { queryParams: { keyword: this.data }});
+        this.router.navigate(['search'], { queryParams: { keyword: this.data } });
       }
     });
   }
-  // check có đăng nhập ko
-  isLoggedIn() {
-
-    this.dataService.isLoggedIn().subscribe(res1 => {
-      this.res1 = res1;
-      if (this.res1.success) {
-                this.data1 = this.res1.result;
-                console.log(this.data1);
-      }
-    });
+  // check localstorage
+  readLocalStorageValue(key) {
+    return localStorage.getItem(key);
   }
-// lấy thông tin user
+  // lấy thông tin user
   getProfile() {
 
     this.dataService.getProfile().subscribe(res2 => {
       this.res2 = res2;
-      if (this.res2.success) {
-                this.data2 = this.res2.result;
+      this.data2 = this.res2.result;
+    });
+  }
+  // get list category
+  getListType() {
+
+    this.productService.getListType().subscribe(res3 => {
+      this.res3 = res3;
+      if (this.res3.success) {
+        this.data3 = this.res3.result;
       }
     });
   }
-// đăng xuất
+  // đăng xuất
   logout() {
     localStorage.removeItem('userToken');
     this.router.navigate(['home']);

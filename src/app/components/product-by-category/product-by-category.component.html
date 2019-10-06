@@ -1,0 +1,44 @@
+<section class="product-filter-section">
+  <div class="container">
+    <div class="section-title">
+      <p>Danh mục sản phẩm</p>
+    </div>
+    <div class="row">
+      <p *ngFor="let alert of alerts">
+        <ngb-alert
+          style="width: 300px;"
+          [type]="alert.type"
+          (close)="closeAlert(alert)"
+          >{{ alert.message }}</ngb-alert
+        >
+      </p>
+      <div *ngFor="let prod of data" class="col-lg-3 col-sm-6">
+        <div class="product-item">
+          <div class="pi-pic">
+            <a class="img-prod" routerLink="/product/{{ prod.id }}"
+              ><img src="{{ prod?.image }}" class="img-fluid" alt=""
+            /></a>
+
+            <!-- <img [src]=" data.image.data "> -->
+            <!-- <div class="pi-links">
+              <a href="#" class="add-card"
+                ><i class="fa fa-shopping-bag"></i><span>ADD TO CART</span></a
+              >
+            </div> -->
+            <button
+              type="button"
+              class="btn btn-outline-success"
+              (click)="OnAddCart()"
+            >
+              <b>Add to cart</b>
+            </button>
+          </div>
+          <div class="pi-text">
+            <h6>{{ prod?.price_per_unit }}.000đ/{{ prod?.unit }}</h6>
+            <p>{{ prod?.name }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

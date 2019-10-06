@@ -41,7 +41,7 @@ export class SignupComponent implements OnInit {
         console.log(res);
         console.log(value);
         localStorage.setItem('userToken', this.res.result);
-        this.router.navigate(['user']);
+        this.router.navigate(['home']);
 
       } else {
         console.log(res);

@@ -25,7 +25,7 @@ export class ProductComponent implements OnInit {
   getDetailProduct(id) {
     this.productService.getDetailProduct(id).subscribe(res => {
         this.res = res;
-
+        console.log('done');
         if (this.res.success) {
             this.data = this.res.result;
         }
